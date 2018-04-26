@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  x:Class="XamarinForms3.View.StyleSheetsPage"
+  xmlns:vm="clr-namespace:XamarinForms3.ViewModel"
+  xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+  ios:Page.UseSafeArea="true"
+  NavigationPage.BackButtonTitle=""
+  Title="{Binding Title}">
+    <ContentPage.Resources>
+        <StyleSheet Source="../Styles/LoginPage.css"/>
+    </ContentPage.Resources>
+    <ContentPage.BindingContext>
+        <vm:StyleSheetsViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <FlexLayout StyleClass="body" x:Name="Form">
+            <FlexLayout x:Name="LoginForm" StyleClass="container">
+                <Label Text="Hello CSS" StyleClass="logo"/>
+                <FlexLayout StyleClass="login-form">
+                    <Entry x:Name="UserNameEntry" 
+                           IsSpellCheckEnabled="false" 
+                           MaxLength="7" 
+                           Placeholder="UserName">
+                           <Entry.TextColor>
+                               <OnPlatform x:TypeArguments="Color">
+                                   <On Platform="Android" Value="#f1f1f1"/>
+                               </OnPlatform>
+                           </Entry.TextColor>
+                            <Entry.PlaceholderColor x:TypeArguments="Color">
+                                <OnPlatform x:TypeArguments="Color">
+                                       <On Platform="Android" Value="#999"/>
+                                   </OnPlatform>
+                            </Entry.PlaceholderColor>
+                    </Entry>
+                    <Entry x:Name="PasswordEntry" Placeholder="Password" IsPassword="true">
+                        <Entry.TextColor>
+                               <OnPlatform x:TypeArguments="Color">
+                                   <On Platform="Android" Value="#f1f1f1"/>
+                               </OnPlatform>
+                        </Entry.TextColor>
+                        <Entry.PlaceholderColor x:TypeArguments="Color">
+                            <OnPlatform x:TypeArguments="Color">
+                                   <On Platform="Android" Value="#999"/>
+                               </OnPlatform>
+                        </Entry.PlaceholderColor>
+                    </Entry>
+                    <Label x:Name="StrengthIndicator"
+                           Text=""
+                           FontSize="24"
+                           StyleClass="strength"
+                           HorizontalTextAlignment="Center" 
+                           HorizontalOptions="Center" />
+                        
+                    <Button Text="Log in" />
+                </FlexLayout>
+            </FlexLayout>
+        </FlexLayout>
+    </ContentPage.Content>
+</ContentPage>

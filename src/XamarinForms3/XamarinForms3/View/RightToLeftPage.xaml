@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  x:Class="XamarinForms3.View.RightToLeftPage"
+  xmlns:vm="clr-namespace:XamarinForms3.ViewModel"
+  xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+  ios:Page.UseSafeArea="true"
+  NavigationPage.BackButtonTitle=""
+  Title="{Binding Title}">
+    <ContentPage.BindingContext>
+        <vm:RightToLeftViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Label VerticalOptions="Center" FontSize="20" Text="مرحبا بالعالم" FlowDirection="RightToLeft" />
+        <!-- Default Device Value FlowDirection="{x:Static Device.FlowDirection}" -->
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Calculator.Forms\Calculator.Forms.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="3.0.0.354232-pre3" />
+    <PackageReference Include="Ooui.Forms" Version="0.9.206" />
+    <PackageReference Include="Refractored.MvvmHelpers" Version="1.3.2.47-beta" />
+  </ItemGroup>
+</Project>
