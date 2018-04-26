@@ -1,6 +1,7 @@
 ﻿using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 using XamarinForms3.View;
-
+using NavigationPage = Xamarin.Forms.NavigationPage;
 
 namespace XamarinForms3
 {
@@ -11,6 +12,7 @@ namespace XamarinForms3
             InitializeComponent();
 
             MainPage = new NavigationPage(new XamarinForms3Page());
+            (MainPage as NavigationPage).On<Xamarin.Forms.PlatformConfiguration.iOS>().SetPrefersLargeTitles(true);
         }
 
         protected override void OnStart()
